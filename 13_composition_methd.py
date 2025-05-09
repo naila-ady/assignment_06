@@ -4,23 +4,23 @@ initialization. Access a method of the Engine class via the Car class.
 """
 class Engine:
     def __init__(self,engine_type):
-        self.engine_type= engine_type
+        self.engine_type = engine_type
     def start(self):
         return f"The {self.engine_type} engine is starting."
     
 
 class Car:
-    def __init__(self, make, model, engine):
+    def __init__(self, make, model, engine_type):
         self.make = make
         self.model = model
-        self.engine = engine  # Composition: Car has an Engine
+        self.engine = Engine(engine_type)  # Composition: Car has an Engine
 
     def start_car(self):
         return f"The {self.make} {self.model} is ready to go. {self.engine.start()}"
 
 # Example usage
-engine = Engine("V8")  # Create an Engine object
-car = Car("Ford", "Mustang", engine)  # Create a Car object and pass the Engine object
+car = Car("Ford", "Mustang", "v8")  # Create a Car object and pass the make and model arguments along with
+print(car.start_car())              #Engine object bcz instance/engine object is ceated at line 16 and this 
+                                    # is called composition
 
-print(car.start_car())
         
