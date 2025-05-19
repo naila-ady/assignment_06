@@ -21,6 +21,7 @@ class Car:
 # Example usage
 car = Car("Ford", "Mustang", "v8")  # Create a Car object and pass the make and model arguments along with
 print(car.start_car())              #Engine object bcz instance/engine object is ceated at line 16 and this 
-                                    # is called composition
+                                    # is called composition strong relation if car destroyed engine will
+                                    # be destroyed
 
         
